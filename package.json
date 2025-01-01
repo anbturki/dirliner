@@ -21,7 +21,13 @@
     "path",
     "structure",
     "cli",
-    "typescript"
+    "typescript",
+    "node",
+    "javascript",
+    "dirliner",
+    "dirliner-cli",
+    "flat-files",
+    "flat-directory"
   ],
   "author": "Your Name",
   "license": "MIT",
@@ -34,6 +40,7 @@
     "LICENSE"
   ],
   "dependencies": {
+    "colorette": "^2.0.20",
     "commander": "^12.1.0",
     "micromatch": "^4.0.8"
   },
