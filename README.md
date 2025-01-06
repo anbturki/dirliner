@@ -35,11 +35,19 @@ A TypeScript library and CLI tool for transforming directory structures into fla
 
 ### Global Installation (CLI Usage)
 ```bash
+# Using Yarn
+yarn global add dirliner
+
+# Using npm
 npm install -g dirliner
 ```
 
 ### Local Installation (Programmatic Usage)
 ```bash
+# Using Yarn
+yarn add dirliner
+
+# Using npm
 npm install dirliner
 ```
 
@@ -56,7 +64,7 @@ dirliner -s ./src -t ./dist -i "node_modules,*.log"
 
 ### TypeScript Quick Start
 ```typescript
-import { DirLiner } from 'dirliner';
+const { DirLiner } = require('dirliner');
 
 const liner = new DirLiner({
     source: './src',
@@ -110,7 +118,7 @@ interface DirLinerResult {
 
 ### Basic Usage
 ```typescript
-import { DirLiner } from 'dirliner';
+const { DirLiner } = require('dirliner');
 
 const liner = new DirLiner({
     source: './src',
@@ -122,9 +130,9 @@ const result = liner.execute();
 
 ### Advanced Usage
 ```typescript
-import { DirLiner, DirLinerOptions } from 'dirliner';
+const { DirLiner } = require('dirliner');
 
-const options: DirLinerOptions = {
+const options = {
     source: './src',
     target: './dist',
     ignorePatterns: ['node_modules', '*.log'],
@@ -202,7 +210,7 @@ Many AI tools and code review platforms don't accept directory uploads, requirin
 
 ### Example: Preparing Code for AI Review
 ```typescript
-import { DirLiner } from 'dirliner';
+const { DirLiner } = require('dirliner');
 
 const liner = new DirLiner({
     source: './my-project',
@@ -251,16 +259,16 @@ ai-upload/
 git clone https://github.com/anbturki/dirliner.git
 
 # Install dependencies
-npm install
+yarn install
 
 # Build the project
-npm run build
+yarn build
 
 # Run tests
-npm test
+yarn test
 
 # Run linting
-npm run lint
+yarn lint
 ```
 
 ### Project Structure
@@ -286,16 +294,7 @@ dirliner/
 
 ### Common Issues
 
-1. **TypeScript Import Errors**
-   ```typescript
-   // Wrong
-   const DirLiner = require('dirliner');
-   
-   // Correct
-   import { DirLiner } from 'dirliner';
-   ```
-
-2. **Ignore Patterns Not Working**
+1. **Ignore Patterns Not Working**
    - Ensure patterns follow the glob syntax
    - Check file paths are relative to source directory
    - Verify ignore file exists and is readable
@@ -305,6 +304,16 @@ dirliner/
    - Verify target directory is writable
    - Ensure files aren't being ignored
 
+4. **Permission Issues**
+   - If getting permission denied, run:
+     ```bash
+     chmod +x $(which dirliner)
+     ```
+   - Or reinstall globally with:
+     ```bash
+     yarn global add dirliner --prefix /usr/local
+     ```
+
 ### Error Messages
 
 | Error | Solution |
@@ -312,7 +321,7 @@ dirliner/
 | ENOENT: no such file or directory | Verify the source path exists |
 | EACCES: permission denied | Check file/directory permissions |
 | EEXIST: file already exists | Use a different target directory |
-| TS2307: Cannot find module | Ensure proper TypeScript imports |
+| TS2307: Cannot find module | Ensure proper CommonJS require |
 
 For more help, please [open an issue](https://github.com/anbturki/dirliner/issues).
 
