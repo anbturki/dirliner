@@ -1,6 +1,6 @@
 {
   "name": "dirliner",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Transform directory structures into flat files while preserving path relationships in filenames. Convert paths like src/app/page.ts to src-app-page.ts automatically.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
