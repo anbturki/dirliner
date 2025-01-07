@@ -6,7 +6,7 @@
 
 ## The Problem
 
-In modern software development, you often need to share or upload code to various platforms - AI assistants, code review tools, documentation systems, or cloud services. Many of these platforms have a common limitation: they only accept individual files, not directories or folder structures. This creates a tedious workflow where you have to:
+Many platforms and tools only accept individual file uploads, not directories or folder structures. This means whenever you need to share your code, you're forced to:
 
 1. Manually navigate through each directory
 2. Copy each file individually
